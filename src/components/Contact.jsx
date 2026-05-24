@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 
 function Contact() {
 
@@ -20,41 +19,23 @@ function Contact() {
 
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
 
     e.preventDefault();
 
-    try {
+    setSuccessMessage("Message Sent Successfully 🚀");
 
-      const response = await axios.post(
-        "http://localhost:5000/contact",
-        formData
-      );
+    setTimeout(()=>{
 
-      setSuccessMessage("Message Sent Successfully 🥳");
+      setSuccessMessage("");
 
-      setTimeout(()=>{
+    },3000);
 
-        setSuccessMessage("");
-
-      },3000);
-
-      setFormData({
-        name:"",
-        email:"",
-        message:""
-      });
-
-      console.log(response.data);
-
-    }
-    catch(error){
-
-      console.log(error);
-
-      alert("Message Failed ❌");
-
-    }
+    setFormData({
+      name:"",
+      email:"",
+      message:""
+    });
 
   };
 
