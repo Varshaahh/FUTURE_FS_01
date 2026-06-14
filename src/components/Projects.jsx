@@ -144,4 +144,5 @@ function Projects() {
   );
 }
 
+export default ProtectedRoute;
 export default Projects;
