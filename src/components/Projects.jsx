@@ -1,116 +1,147 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function Projects() {
-
   const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
-
     {
-      title:"Event Management System",
-
-      short:"Full stack event registration platform",
-
-      details:
-      "Developed a full stack Event Management System with separate Admin and User modules. Admin can create and manage events while users can browse events and register online. Implemented QR/Scanner based verification system for ticket validation and attendee tracking. The platform also monitors participant count and event registrations efficiently.",
-
-      tech:"React.js | Spring Boot | MySQL"
+      title: "Event Management System",
+      image: "/event-management.png",
+      type: "Academic Project",
+      status: "Completed",
+      role: "Full Stack Developer",
+      overview:
+        "A full-stack event management platform where administrators can create events and users can register online. The system helps manage event registrations, attendance, and event status.",
+      tech: "React.js | Spring Boot | MySQL",
+      features:
+        "Admin Login, Event Creation, User Registration, Attendance Tracking, Event Status Management, User Dashboard",
+      outcome:
+        "Improved event organization by automating registration and attendance tracking."
     },
-
     {
-      title:"Travel Buddy",
-
-      short:"Smart travel assistance platform",
-
-      details:
-      "Travel Buddy is an intelligent travel planning platform designed to help users explore nearby festivals, cultural places, restaurants, hotels, and local events. The system provides ratings, reviews, descriptions, and recommendations to improve travel experience. Built with focus on personalized and culture-oriented travel guidance.",
-
-      tech:"React.js | Spring Boot | MySQL"
+      title: "Travel Buddy",
+      image: "/travel-buddy.png",
+      type: "Academic Project",
+      status: "Completed",
+      role: "Frontend / Full Stack Developer",
+      overview:
+        "A smart travel planning application that helps users discover destinations, plan trips, and manage travel schedules efficiently.",
+      tech: "React.js | Spring Boot | MySQL",
+      features:
+        "Destination Search, Trip Planning, Hotel Details, Travel Schedule Management, User Dashboard",
+      outcome:
+        "Provides travelers with an organized platform for planning trips and managing itineraries."
     },
-
     {
-      title:"Plant Leaf Disease Detection",
-
-      short:"AI powered crop disease prediction system",
-
-      details:
-      "Developed a Deep Learning based application using Neural Networks and CNN models to detect plant leaf diseases from images. The system helps farmers identify crop diseases at an early stage and supports improved agricultural productivity using Artificial Intelligence techniques.",
-
-      tech:"Python | CNN | Deep Learning"
+      title: "Restaurant Reservation System",
+      image: "/restaurant-website.png",
+      type: "Internship Project",
+      status: "Completed",
+      role: "Full Stack Developer",
+      overview:
+        "A full-stack restaurant reservation platform developed to simplify table booking and restaurant management. Customers can reserve tables online and track booking status, while admins manage reservations using a dedicated dashboard.",
+      tech: "React.js | Node.js | Express.js | MongoDB",
+      features:
+        "Reservation Form, Admin Dashboard, Approve/Reject Reservations, QR Code Ticket, Customer Dashboard, Excel Export, Analytics Charts, Admin Login",
+      outcome:
+        "Reduced manual booking work by digitizing table reservations and providing real-time booking management."
+    },
+    {
+      title: "CRM System",
+      image: "/crm-system.png",
+      type: "Academic Project",
+      status: "Completed",
+      role: "Full Stack Developer",
+      overview:
+        "A Customer Relationship Management system designed to manage customer information, sales leads, and business interactions in one place.",
+      tech: "React.js | Node.js | MongoDB",
+      features:
+        "Customer Database, Lead Tracking, Sales Reports, Customer Analytics, Dashboard",
+      outcome:
+        "Helps businesses improve customer engagement and manage sales activities efficiently."
+    },
+    {
+      title: "Task Management App",
+      image: "/task-management.png",
+      type: "Internship Project",
+      status: "Completed",
+      role: "Full Stack Developer",
+      overview:
+        "A productivity-focused task management application that allows users to create, update, delete, and track tasks with status monitoring.",
+      tech: "React.js | Node.js | Express.js | MongoDB",
+      features:
+        "User Authentication, CRUD Operations, Task Status Tracking, Dashboard, Responsive Design",
+      outcome:
+        "Improves productivity by providing an organized way to manage daily tasks."
     }
-
   ];
 
   return (
+    <section id="projects" className="projects">
+      <h2 className="section-title">MY PROJECTS</h2>
 
-    <section
-      id="projects"
-      className="projects"
-    >
+      <div className="projects-grid">
+        {projects.map((project, index) => (
+          <div className="project-card" key={index}>
+            <img
+              src={project.image}
+              alt={project.title}
+              className="project-image"
+            />
 
-      <h1>My Projects</h1>
-
-      <div className="project-container">
-
-        {
-          projects.map((project,index)=>(
-
-            <div
-              className="project-card"
-              key={index}
-            >
-
-              <h2>{project.title}</h2>
-
-              <p>{project.short}</p>
-
+            <div className="project-content">
+              <h3>{project.title}</h3>
+              <p>{project.overview}</p>
               <h4>{project.tech}</h4>
 
               <button
-                onClick={()=>setSelectedProject(project)}
+                className="project-btn"
+                onClick={() => setSelectedProject(project)}
               >
                 View Details
               </button>
-
             </div>
-
-          ))
-        }
-
+          </div>
+        ))}
       </div>
 
-      {
-        selectedProject &&
-
+      {selectedProject && (
         <div className="modal-overlay">
-
-          <div className="modal">
+          <div className="project-modal">
+            <button
+              className="modal-close"
+              onClick={() => setSelectedProject(null)}
+            >
+              ×
+            </button>
 
             <h2>{selectedProject.title}</h2>
 
-            <p>{selectedProject.details}</p>
+            <h4>Project Type</h4>
+            <p>{selectedProject.type}</p>
 
-            <h4>
-              Technologies Used
-            </h4>
+            <h4>Status</h4>
+            <p>{selectedProject.status}</p>
 
+            <h4>My Role</h4>
+            <p>{selectedProject.role}</p>
+
+            <h4>Project Overview</h4>
+            <p>{selectedProject.overview}</p>
+
+            <h4>Technologies Used</h4>
             <p>{selectedProject.tech}</p>
 
-            <button
-              onClick={()=>setSelectedProject(null)}
-            >
-              Close
-            </button>
+            <h4>Key Features</h4>
+            <p>{selectedProject.features}</p>
 
+            <h4>Outcome</h4>
+            <p>{selectedProject.outcome}</p>
           </div>
-
         </div>
-      }
-
+      )}
     </section>
-
   );
-
 }
 
 export default Projects;

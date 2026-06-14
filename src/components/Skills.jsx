@@ -1,74 +1,65 @@
 import {
-  FaReact,
-  FaJava,
-  FaPython,
   FaHtml5,
-  FaCss3Alt
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaPython,
+  FaJava,
+  FaGithub
 } from "react-icons/fa";
 
 import {
+  SiMongodb,
   SiSpringboot,
-  SiMysql,
+  SiC,
   SiCplusplus
 } from "react-icons/si";
 
 function Skills() {
+
+ const skills = [
+  { icon: <FaHtml5 color="#E34F26" />, name: "HTML" },
+  { icon: <FaCss3Alt color="#1572B6" />, name: "CSS" },
+  { icon: <FaJs color="#F7DF1E" />, name: "JavaScript" },
+  { icon: <FaReact color="#61DAFB" />, name: "React JS" },
+  { icon: <FaNodeJs color="#339933" />, name: "Node JS" },
+  { icon: <SiMongodb color="#47A248" />, name: "MongoDB" },
+  { icon: <SiSpringboot color="#6DB33F" />, name: "Spring Boot" },
+  { icon: <FaJava color="#f89820" />, name: "Java" },
+  { icon: <FaPython color="#3776AB" />, name: "Python" },
+  { icon: <SiC color="#00599C" />, name: "C" },
+  { icon: <SiCplusplus color="#00599C" />, name: "C++" },
+  { icon: <FaGithub color="#181717" />, name: "GitHub" }
+];
   return (
+    <section id="skills" className="skills">
 
-    <section
-      id="skills"
-      className="skills"
-      data-aos="zoom-in"
-    >
+      <h2>SKILLS</h2>
 
-      <h1>My Skills</h1>
+      <p className="skills-subtitle">
+        Technologies and tools I use to build modern applications.
+      </p>
 
-      <div className="skills-container">
+      <div className="skills-grid">
 
-        <div className="skill-card">
-          <FaReact className="icon" />
-          <h2>React.js</h2>
-        </div>
+        {skills.map((skill, index) => (
 
-        <div className="skill-card">
-          <SiSpringboot className="icon" />
-          <h2>Spring Boot</h2>
-        </div>
+          <div className="skill-card" key={index}>
 
-        <div className="skill-card">
-          <FaJava className="icon" />
-          <h2>Java</h2>
-        </div>
+            <div className="skill-icon">
+              {skill.icon}
+            </div>
 
-        <div className="skill-card">
-          <FaPython className="icon" />
-          <h2>Python</h2>
-        </div>
+            <h3>{skill.name}</h3>
 
-        <div className="skill-card">
-          <SiMysql className="icon" />
-          <h2>MySQL</h2>
-        </div>
+          </div>
 
-        <div className="skill-card">
-          <FaHtml5 className="icon" />
-          <h2>HTML</h2>
-        </div>
-
-        <div className="skill-card">
-          <FaCss3Alt className="icon" />
-          <h2>CSS</h2>
-        </div>
-
-        <div className="skill-card">
-          <SiCplusplus className="icon" />
-          <h2>C++</h2>
-        </div>
+        ))}
 
       </div>
 
     </section>
-
   );
 }
 

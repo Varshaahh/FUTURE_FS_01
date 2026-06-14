@@ -5,7 +5,7 @@ function Navbar() {
     <nav className="navbar">
 
       <h2 className="logo">
-        Varshasri
+        Portfolio.
       </h2>
 
       <ul className="nav-links">
@@ -41,6 +41,18 @@ function Navbar() {
         </li>
 
       </ul>
+
+      <div className="nav-right">
+
+        <a
+          href="/resume.pdf"
+          download
+          className="resume-nav-btn"
+        >
+          Resume
+        </a>
+
+      </div>
 
     </nav>
   );

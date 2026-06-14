@@ -1,71 +1,73 @@
 function Home() {
   return (
+    <section id="home" className="hero">
+      <div className="hero-left">
+        <h1>
+          Hello, I'm <span>Varsha Sri</span>
+        </h1>
 
-    <section
-      id="home"
-      className="home"
-      data-aos="fade-right"
-    >
+        <h2>
+          AI & ML Engineer | Full Stack Developer
+        </h2>
 
-      <h1>
-        Hi, I'm Varsha Sri 😊
-      </h1>
+        <p>
+          Passionate about building modern, responsive and
+          user-friendly web applications using React, Node.js,
+          MongoDB, and AI/ML technologies.
+        </p>
 
-      <h2>
-        AI & ML Engineer | Full Stack Developer
-      </h2>
+        <div className="skill-tags">
+          <span>React</span>
+          <span>Node.js</span>
+          <span>MongoDB</span>
+          <span>Python</span>
+          <span>AI/ML</span>
+        </div>
 
-      <p>
-        Passionate about Artificial Intelligence,
-        Full Stack Development,
-        and building modern web applications.
-      </p>
+        <div className="hero-buttons">
+          <a href="#contact" className="black-btn">
+            Hire Me
+          </a>
 
-      <div className="home-buttons">
+          <a
+            href="/resume.pdf"
+            download
+            className="white-btn"
+          >
+            Download CV
+          </a>
 
-        <a href="#projects">
-
-          <button>
+          <a href="#projects" className="black-btn">
             View Projects
-          </button>
+          </a>
+        </div>
 
-        </a>
+        <div className="socials">
+          <a
+            href="https://github.com/Varshaahh"
+            target="_blank"
+            rel="noreferrer"
+          >
+            G
+          </a>
 
-        <a
-          href="/resume.pdf"
-          download
-        >
-
-          <button>
-            Download Resume
-          </button>
-
-        </a>
-
+          <a
+            href="https://linkedin.com/in/varshasri-chityala-494b44353"
+            target="_blank"
+            rel="noreferrer"
+          >
+            in
+          </a>
+        </div>
       </div>
 
-      <div className="social-links">
-
-        <a
-          href="https://github.com/Varshaahh"
-          target="_blank"
-          rel="noreferrer"
-        >
-          GitHub
-        </a>
-
-        <a
-          href="https://linkedin.com/in/varshasri-chityala-494b44353"
-          target="_blank"
-          rel="noreferrer"
-        >
-          LinkedIn
-        </a>
-
+      <div className="hero-right">
+   <img
+  src="/profile2.jpeg"
+  alt="Varsha Sri"
+/>
       </div>
-
     </section>
-
   );
 }
 
